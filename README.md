@@ -1,5 +1,3 @@
-<img src="static/svelte.png" width="300" height="300" alt="Svelte logo" style="float: right">
-
 # Yes, Cranberry was hideous
 (and it will probably still be after this is finished)
 
