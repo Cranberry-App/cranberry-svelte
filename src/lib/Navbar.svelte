@@ -4,7 +4,7 @@
     let menuHidden = true;
 </script>
 
-<html>
+<html lang="en">
     <ul id="navbar">
         {#each items as item}
             <li on:click={window.location.href = item.url}><a>{item.text}</a></li>
