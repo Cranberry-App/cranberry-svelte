@@ -1,38 +1,22 @@
-# create-svelte
+<img src="static/svelte.png" width="300" height="300" alt="Svelte logo" style="float: right">
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Yes, Cranberry was hideous
+(and it will probably still be after this is finished)
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+**BUT** this might be a good opportunity to get into Svelte.js
+## How to run
+**Make sure to have NPM installed**
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+# First, run
+npm install
+# to install all the dependencies
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+# Then, run
+npm run dev --- --open
+# to start the dev server and open the browser
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
+# To build the project, run
 npm run build
+# and it will be in the `public` folder
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+<img src="static/favicon.png" width="300" height="300" alt="Cranberry logo" style="float: left">
