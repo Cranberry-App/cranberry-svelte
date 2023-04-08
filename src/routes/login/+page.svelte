@@ -3,29 +3,14 @@
     import { firebaseConfig } from "$lib/constants";
     import { initializeApp } from "firebase/app";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-    import { getDoc, doc, getFirestore } from "firebase/firestore";
-    import { goto } from "$app/navigation";
 
     let currentForm: null | 'login' | 'signup' = null;
 
     const app = initializeApp(firebaseConfig);
 
-    const db = getFirestore(app);
-
     const auth = getAuth();
 
     signOut(auth);
-
-    function buttonPressed(id) {
-        switch (id) {
-            case 'login': {
-                currentForm = 'login';
-            } break;
-            case 'signup': {
-                currentForm = 'signup';
-            } break;
-        }
-    }
 
     function login() {
         const email = document.getElementById('login-email') as HTMLInputElement;
