@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { Button, Label, Input } from 'flowbite-svelte';
+    import Button from '$lib/components/Button.svelte';
+    import Input from '$lib/components/Input.svelte';
+
     import { firebaseConfig } from "$lib/constants";
     import { initializeApp } from "firebase/app";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
@@ -17,7 +19,7 @@
         const password = document.getElementById('login-password') as HTMLInputElement;
 
         signInWithEmailAndPassword(auth, email.value, password.value)
-            .then((userCredential) => completeLogin(userCredential))
+            .then((userCredential) => completeLogin())
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -37,7 +39,7 @@
         }
 
         createUserWithEmailAndPassword(auth, email.value, password.value)
-            .then((userCredential) => completeLogin(userCredential))
+            .then((userCredential) => completeLogin())
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -46,8 +48,7 @@
             });
     }
 
-    function completeLogin(userCredential) {
-        const user = userCredential.user;
+    function completeLogin() {
         window.location.href = '/';
     }
 </script>
@@ -60,40 +61,35 @@
     <body>
         <div class="buttons">
             <div class="button-wrapper">
-                <Button color="purple" disabled={currentForm === 'login'} on:click={() => { currentForm = 'login' }}>Log in</Button>
+                <Button disabled={currentForm === 'login'} on:click={() => { currentForm = 'login' }}>Log in</Button>
             </div>
             <div class="button-wrapper">
-                <Button color="purple" disabled={currentForm === 'signup'} on:click={() => { currentForm = 'signup' }}>Sign up</Button>
+                <Button disabled={currentForm === 'signup'} on:click={() => { currentForm = 'signup' }}>Sign up</Button>
             </div>
         </div>
         <div class="form login" class:hidden={currentForm !== 'login'}>
             <div class="input-wrapper">
-                <Label for="login-email">E-mail</Label>
-                <Input id="login-email" placeholder="E-mail"/>
+                <Input id="login-email" placeholder="E-mail" label="E-mail"/>
             </div>
             <div class="input-wrapper">
-                <Label for="login-password">Password</Label>
-                <Input type="password" id="login-password" placeholder="Password" />
+                <Input type="password" id="login-password" placeholder="Password" label="Password" />
             </div>
             <div class="buttonContainer">
-                <Button color="purple" on:click={login}>Log in</Button>
+                <Button on:click={login} fullWidth={true}>Log in</Button>
             </div>
         </div>
         <div class="form signup" class:hidden={currentForm !== 'signup'}>
             <div class="input-wrapper">
-                <Label for="signup-email">E-mail</Label>
-                <Input id="signup-email" placeholder="E-mail"/>
+                <Input id="signup-email" placeholder="E-mail" label="E-mail" />
             </div>
             <div class="input-wrapper">
-                <Label for="signup-password">Password</Label>
-                <Input type="password" id="signup-password" placeholder="Password" />
+                <Input type="password" id="signup-password" placeholder="Password" label="Password" />
             </div>
             <div class="input-wrapper">
-                <Label for="signup-password-repeat">Password</Label>
-                <Input type="password" id="signup-password-repeat" placeholder="Repeat password" />
+                <Input type="password" id="signup-password-repeat" placeholder="Repeat password" label="Repeat Password" />
             </div>
             <div class="buttonContainer">
-                <Button color="purple" on:click={signup}>Sign up</Button>
+                <Button on:click={signup} fullWidth={true}>Sign up</Button>
             </div>
         </div>
     </body>
