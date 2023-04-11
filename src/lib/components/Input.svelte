@@ -6,7 +6,7 @@
     export let id: string;
     export let status: "success"|"error"|"default" = "default";
     export let statusText: string|undefined = undefined;
-    export let keypressFunction: Function = (...args) => {};
+    export let keypressFunction: Function = () => {};
 </script>
 
 <div class:error={status === "error"} class:success={status === "success"}>
