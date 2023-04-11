@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Ubuntu:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Merriweather+Sans:wght@700&family=Noto+Sans&display=swap');
 // Colors:
-$background-color: #aa0022;
-$background-color-semi-light: #ff3366;
-$background-color-light: #ff0033;
-$text-color: #ffe6e6;
-$text-color-light: #ffffff;
+$background-color: #EDEDE4;
+$primary-color: #DA1E37;
+$primary-color-blend-1: #DB3147;
+$primary-color-blend-2: #E38D99;
+$primary-color-blend-3: #E8B5B5;
+$primary-bg-text-color: #EAEAEA;
+
 
 // Fonts:
-$inter: 'Inter', sans-serif;
-$ubuntu: 'Ubuntu', sans-serif;
+$title-font: 'Merriweather Sans', sans-serif;
+$main-font: 'Inter', sans-serif;
+$secondary-font: 'Noto Sans', sans-serif;
